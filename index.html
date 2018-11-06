@@ -3,8 +3,11 @@
 <head>
 <title>WebSocket/SockJS Echo Sample (Adapted from Tomcat's echosample)</title>
 <style type="text/css">
+.connect_box{ 
+    display: flex;
+    align-items: flex-start;
+}
 #console_container {
-	float: left;
 	width: 400px
 }
 
@@ -13,12 +16,11 @@
 }
 
 #console_container {
-	float: left;
 	margin-left: 15px;
 	width: 400px;
 }
 
-#console {
+#render_log {
 	border: 1px solid #CCCCCC;
 	border-right-color: #999999;
 	border-bottom-color: #999999;
@@ -28,7 +30,7 @@
 	width: 100%;
 }
 
-#console p {
+#render_log p {
 	padding: 0;
 	margin: 0;
 }
@@ -145,8 +147,8 @@
 			Javascript! Websockets rely on Javascript being enabled. Please
 			enable Javascript and reload this page!</h2>
 	</noscript>
-	<div>
-		<div id="connect-container">
+	<div class="connect_box">
+		<div id="connect_container">
 			<input id="radio1" type="radio" name="group1"
 				onclick="selectUpdateUrl('/websocket');"> <label for="radio1">W3C WebSocket</label> <br> 
 				<input id="radio2" type="radio" name="group1"
