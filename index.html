@@ -149,10 +149,20 @@
 	</noscript>
 	<div class="connect_box">
 		<div id="connect_container">
-			<input id="radio1" type="radio" name="group1"
-				onclick="selectUpdateUrl('/websocket');"> <label for="radio1">W3C WebSocket</label> <br> 
-				<input id="radio2" type="radio" name="group1"
-				onclick="selectUpdateUrl('/sockjs/webSocketServer');"> <label for="radio2">SockJS</label>
+            <input 
+                id="W3C" 
+                type="radio" 
+                name="W3C" 
+                onclick="selectUpdateUrl('/websocket');"
+            > 
+            <label for="W3C">W3C WebSocket</label> <br> 
+            <input 
+                id="sock_js" 
+                type="radio" 
+                name="sock_js"
+                onclick="selectUpdateUrl('/sockjs/webSocketServer');"
+            > 
+            <label for="sock_js">SockJS</label>
 			<div id="sockjs_transport_select" style="visibility: hidden;">
                 <span>SockJS transport:</span> 
                 <select onchange="updateTransport(this.value)">
@@ -167,13 +177,21 @@
 			</div>
 			<div>
 				<button id="connect" onclick="connect();">连接</button>
-				<button id="close_connect" disabled="disabled" onclick="closeConnect();">断开</button>
+                <button 
+                    id="close_connect" 
+                    disabled="disabled" 
+                    onclick="closeConnect();"
+                >断开</button>
 			</div>
 			<div>
 				<textarea id="message">Here is a message!</textarea>
 			</div>
 			<div>
-				<button id="requser_message" onclick="requserMessage();" disabled="disabled">发送消息</button>
+                <button 
+                    id="requser_message" 
+                    onclick="requserMessage();" 
+                    disabled="disabled"
+                >发送消息</button>
 			</div>
 		</div>
 		<div id="console_container">
